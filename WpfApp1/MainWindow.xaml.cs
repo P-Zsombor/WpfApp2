@@ -25,8 +25,33 @@ namespace WpfApp1
         public MainWindow()
         {
             InitializeComponent();
+            createTB();
         }
         
+        async void createTB()
+        {
+            rockets.Children.Clear();
+            HttpClient client = new HttpClient();
+            string url = "http://127.1.1.1:4444/rockets";
+            try
+            {
+                HttpResponseMessage response = await client.GetAsync(url);
+                string res = await response.Content.ReadAsStringAsync();
+                List<Rocket> list = JsonConvert.DeserializeObject<List<Rocket>>(res);
+                foreach (Rocket item in list)
+                {
+                    TextBlock one = new TextBlock();
+                    one.Text = $"Name: {item.name}, Engine name: {item.enginename}, Engines: {item.engines}";
+                    rockets.Children.Add(one);
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+
+        }
+
         async void add(object s, EventArgs e)
         {
             HttpClient client = new HttpClient();
@@ -46,6 +71,7 @@ namespace WpfApp1
 
                 HttpResponseMessage response = await client.PostAsync(url, data);
                 response.EnsureSuccessStatusCode();
+                createTB();
             }
             catch (Exception err)
             {

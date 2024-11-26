@@ -5,86 +5,101 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="400" Width="450">
+        Title="MainWindow" Height="400" Width="600">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
-            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <TextBlock
-            Grid.Row="0"
-            Grid.Column="0"
-            FontSize="30"
-            TextAlignment="Right"
-            VerticalAlignment="Center"
-            Padding="5"
-            >
-        Name:
-        </TextBlock>
-        <TextBlock
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <TextBlock
+                Grid.Row="0"
+                Grid.Column="0"
+                FontSize="30"
+                TextAlignment="Right"
+                VerticalAlignment="Center"
+                Padding="5"
+                >
+                Name:
+            </TextBlock>
+            <TextBlock
+                Grid.Row="1"
+                Grid.Column="0"
+                FontSize="30"
+                TextAlignment="Right"
+                VerticalAlignment="Center"
+                Padding="5"
+                >
+                Engine name:
+            </TextBlock>
+            <TextBlock
+                Grid.Row="2"
+                Grid.Column="0"
+                FontSize="30"
+                TextAlignment="Right"
+                VerticalAlignment="Center"
+                Padding="5"
+                >
+                Engines:
+            </TextBlock>
+            <Button
+                Grid.Row="3"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                FontSize="25"
+                Click="add"
+                >
+                Add
+            </Button>
+            <TextBox
+                Name="name"
+                Grid.Column="1"
+                Grid.Row="0"
+                FontSize="24"
+                VerticalAlignment="Center"
+                Padding="5"
+                >
+                text
+            </TextBox>
+            <TextBox
+                Name="enginename"
+                Grid.Column="1"
+                Grid.Row="1"
+                FontSize="24"
+                VerticalAlignment="Center"
+                Padding="5"
+                >
+                text
+            </TextBox>
+            <TextBox
+                Name="engines"
+                Grid.Column="1"
+                Grid.Row="2"
+                FontSize="24"
+                VerticalAlignment="Center"
+                Padding="5"
+                >
+                123
+            </TextBox>
+        </Grid>
+        <StackPanel
+            Name="rockets"
             Grid.Row="1"
-            Grid.Column="0"
-            FontSize="30"
-            TextAlignment="Right"
-            VerticalAlignment="Center"
-            Padding="5"
             >
-            Engine name:
-        </TextBlock>
-        <TextBlock
-            Grid.Row="2"
-            Grid.Column="0"
-            FontSize="30"
-            TextAlignment="Right"
-            VerticalAlignment="Center"
-            Padding="5"
-            >
-            Engines:
-        </TextBlock>
-        <Button
-            Grid.Row="3"
-            Grid.Column="0"
-            Grid.ColumnSpan="2"
-            FontSize="25"
-            Click="add"
-            >
-            Add
-        </Button>
-        <TextBox
-            Name="name"
-            Grid.Column="1"
-            Grid.Row="0"
-            FontSize="24"
-            VerticalAlignment="Center"
-            Padding="5"
-            >
-            text
-        </TextBox>
-        <TextBox
-            Name="enginename"
-            Grid.Column="1"
-            Grid.Row="1"
-            FontSize="24"
-            VerticalAlignment="Center"
-            Padding="5"
-            >
-            text
-        </TextBox>
-        <TextBox
-            Name="engines"
-            Grid.Column="1"
-            Grid.Row="2"
-            FontSize="24"
-            VerticalAlignment="Center"
-            Padding="5"
-            >
-            123
-        </TextBox>
+            
+        </StackPanel>
     </Grid>
 </Window>
